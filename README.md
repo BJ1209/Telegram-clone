@@ -1,4 +1,4 @@
-# Telegram Clone - REdux
+# Telegram Clone - React & Redux
 
 ## Google Authentication
 
