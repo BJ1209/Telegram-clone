@@ -1,0 +1,53 @@
+@import "../Variables";
+
+.sidebarThread {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.6em;
+  border-bottom: $border;
+  cursor: pointer;
+  color: $telegram-text-color;
+  &:hover {
+    background: $telegram-blue-hover;
+  }
+  .sidebarThread_avatar {
+    margin: 0 0.5em;
+  }
+  .sidebarThread__info {
+    flex: 1;
+    margin-left: 0.5em;
+    h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.2em;
+    }
+    p {
+      font-weight: normal;
+      font-size: 0.85rem;
+    }
+  }
+  .sidebarThread__timestamp {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .sidebarThread_avatar {
+    height: $height-width-600-768 !important;
+    width: $height-width-600-768 !important;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 600px) {
+  .sidebarThread_avatar {
+    height: $height-width-425-600 !important;
+    width: $height-width-425-600 !important;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 425px) {
+  .sidebarThread_avatar {
+    height: $height-width-425-600 !important;
+    width: $height-width-425-600 !important;
+  }
+}

@@ -1,0 +1,132 @@
+@import "../Variables";
+.chat {
+  flex: 0.78;
+  display: flex;
+  flex-direction: column;
+  .chat__header {
+    padding: 0.25em 0.45em;
+    border-bottom: $border;
+    display: flex;
+    align-items: center;
+    color: $telegram-text-color;
+    .chat__avatar {
+      margin: 0 1em 0 0.5em;
+    }
+    .chat__headerContent {
+      flex: 1;
+    }
+    button {
+      color: $telegram-text-color;
+    }
+    button:hover {
+      color: $telegram-blue-hover;
+    }
+  }
+  .chat__messages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
+  }
+  .chat__footer {
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    border-top: $border;
+    form {
+      flex: 1;
+      display: flex;
+      input {
+        flex: 1;
+        padding: 0em 0.8em 0em 1.2em;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background: $telegram-blue-dark;
+        color: $telegram-text-color;
+      }
+      button {
+        margin-left: 0.5em;
+      }
+    }
+    .chat__buttonIcon {
+      color: $telegram-text-color;
+      transition: all 80ms ease-out;
+      &:hover {
+        color: $telegram-blue-hover;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .chat {
+    flex: 0.82;
+    .chat__header {
+      padding: 0.33em 0.45em;
+    }
+    .chat__footer {
+      padding: 0.62em 1em;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .chat {
+    flex: 0.85;
+    .chat__header {
+      padding: 0.5em 0.45em;
+    }
+    .chat__footer {
+      padding: 0.75em 1em;
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .chat {
+    flex: 0.85;
+    .chat__header {
+      padding: 0.4em 0.45em;
+      .chat__avatar {
+        height: $height-width-600-768 !important;
+        width: $height-width-600-768 !important;
+        margin: 0 1em 0 0.5em;
+      }
+    }
+    .chat__footer {
+      padding: 1.05em 1em;
+    }
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 600px) {
+  .chat {
+    flex: 0.85;
+    .chat__header {
+      padding: 0.45em;
+      .chat__avatar {
+        height: $height-width-425-600 !important;
+        width: $height-width-425-600 !important;
+        margin: 0 1em 0 0.5em;
+      }
+    }
+    .chat__footer {
+      padding: 1.05em 1em;
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 425px) {
+  .chat {
+    flex: 0.9;
+    .chat__header {
+      padding: 0.45em;
+      .chat__avatar {
+        height: $height-width-425-600 !important;
+        width: $height-width-425-600 !important;
+        margin: 0 1em 0 0.5em;
+      }
+    }
+    .chat__footer {
+      padding: 1.05em 1em;
+    }
+  }
+}

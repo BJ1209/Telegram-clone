@@ -1,0 +1,130 @@
+@import "../Variables";
+
+.sidebar {
+  flex: 0.22;
+  display: flex;
+  flex-direction: column;
+  border-right: $border;
+  .sidebar__header {
+    display: flex;
+    align-items: center;
+    padding: 0.6em;
+    border-bottom: $border;
+    .sidebar__search {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: $telegram-blue-dark;
+      color: white;
+      border-radius: 5px;
+      padding: 0.3em;
+      height: fit-content;
+      svg {
+        margin: 0 0 0 0.4em;
+      }
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0.1em 1em;
+        color: #fff;
+      }
+    }
+    button {
+      margin: 0 0 0 0.2em;
+      svg {
+        font-size: 1.2rem !important;
+        color: #f5f5f5;
+      }
+    }
+  }
+  .sidebar__threads {
+    flex: 1;
+    overflow-y: scroll;
+  }
+  .sidebar__bottom {
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: $border;
+    .sidebar__bottomAvatar {
+      cursor: pointer;
+      transition: opacity 100ms ease-out;
+    }
+    .sidebar__bottomAvatar:hover,
+    .sidebar__bottomAvatar:focus {
+      opacity: 0.5;
+    }
+    .sidebar__bottomIcon {
+      color: $telegram-text-color;
+      &:hover {
+        color: $telegram-blue-hover;
+      }
+    }
+  }
+}
+.MuiList-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.MuiListItem-root:hover {
+  background: $telegram-blue-dark !important;
+  color: white !important;
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .sidebar {
+    flex: 0.18;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .sidebar {
+    flex: 0.15;
+    .sidebar__header {
+      padding: 0.9em;
+    }
+    .sidebar__bottom {
+      padding: 0.5em;
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .sidebar {
+    flex: 0.15;
+    .sidebar__header {
+      padding: 0.9em;
+    }
+    .sidebar__bottom {
+      padding: 0.7em;
+      .sidebar__bottomAvatar {
+        width: $height-width-600-768 !important;
+        height: $height-width-600-768 !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 600px) {
+  .sidebar {
+    flex: 0.15;
+    .sidebar__bottom {
+      padding: 1.05em;
+      .sidebar__bottomAvatar {
+        width: $height-width-425-600 !important;
+        height: $height-width-425-600 !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 425px) {
+  .sidebar {
+    flex: 0.1;
+    .sidebar__bottom {
+      padding: 1.05em;
+      .sidebar__bottomAvatar {
+        width: $height-width-425-600 !important;
+        height: $height-width-425-600 !important;
+      }
+    }
+  }
+}

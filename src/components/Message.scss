@@ -1,0 +1,124 @@
+@import "../Variables";
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 550px;
+  width: fit-content;
+  padding: 1em;
+  &:first-of-type {
+    padding-top: 1em;
+  }
+  &.user--message {
+    margin-left: auto;
+
+    & > .message__avatar {
+      order: 1;
+      margin-left: 0.8em;
+    }
+
+    & > p {
+      @supports (clip-path: polygon(50% 0, 0 0, 0 75%)) {
+        &::before {
+          display: none;
+        }
+        &::after {
+          clip-path: polygon(50% 0, 0 0, 0 75%);
+          content: "";
+          position: absolute;
+          height: 1em;
+          width: 1em;
+          background: $telegram-text-color;
+          top: 0;
+          right: -13px;
+          @media screen and (min-width: 992px) and (max-width: 1200px) {
+            right: -12px;
+          }
+          @media screen and (min-width: 768px) and (max-width: 992px) {
+            right: -10px;
+          }
+          @media screen and (min-width: 600px) and (max-width: 768px) {
+            right: -7.5px;
+          }
+          @media screen and (min-width: 425px) and (max-width: 600px) {
+            right: -5px;
+            clip-path: polygon(70% 0, 0 0, 0 100%);
+          }
+          @media screen and (min-width: 0px) and (max-width: 425px) {
+            right: -4px;
+            clip-path: polygon(80% 0, 0 0, 0 100%);
+          }
+        }
+      }
+    }
+  }
+
+  & > p {
+    position: relative;
+    background: $telegram-text-color;
+    padding: 0.2em 3.1em 0.3em 0.5em;
+    margin-left: 0.6em;
+    border-radius: 4px;
+    font-size: 1.05rem;
+    word-wrap: break-word;
+    margin-left: 1em;
+    @supports (clip-path: polygon(100% 0, 50% 0, 100% 75%)) {
+      &::before {
+        content: "";
+        position: absolute;
+        height: 1em;
+        width: 1em;
+        clip-path: polygon(100% 0, 50% 0, 100% 75%);
+        top: 0;
+        left: -13px;
+        background: $telegram-text-color;
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+          left: -12px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+          left: -10px;
+        }
+        @media screen and (min-width: 600px) and (max-width: 768px) {
+          left: -7.5px;
+        }
+        @media screen and (min-width: 425px) and (max-width: 600px) {
+          left: -5px;
+          clip-path: polygon(100% 0, 25% 0, 100% 75%);
+        }
+        @media screen and (min-width: 0px) and (max-width: 425px) {
+          left: -4px;
+          clip-path: polygon(100% 0, 20% 0, 100% 75%);
+        }
+      }
+    }
+    & > .timestamp {
+      font-size: 0.65rem;
+      color: rgb(130, 130, 130);
+      position: absolute;
+      bottom: 2px;
+      right: 4px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .message__avatar {
+    height: $height-width-600-768 !important;
+    width: $height-width-600-768 !important;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 600px) {
+  .message__avatar {
+    height: $height-width-425-600 !important;
+    width: $height-width-425-600 !important;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 425px) {
+  .message__avatar {
+    height: $height-width-425-600 !important;
+    width: $height-width-425-600 !important;
+  }
+}

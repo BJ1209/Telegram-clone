@@ -1,0 +1,54 @@
+@import "../Variables";
+
+.login {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  .login__container {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    h3 {
+      text-align: center;
+      color: $telegram-text-color;
+      font-size: 1.8rem;
+    }
+    img {
+      object-fit: contain;
+      height: 11em;
+      @media screen and (min-width: 0px) and (max-width: 768px) {
+        height: 11em;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        height: 9em;
+      }
+    }
+    button {
+      background: $telegram-blue-hover;
+      width: 45%;
+      font-weight: 500;
+      color: $telegram-text-color;
+      border: 2px solid $telegram-blue;
+      letter-spacing: 2px;
+      transition: all 250ms ease-out;
+
+      @media screen and (min-width: 0px) and (max-width: 600px) {
+        width: 125%;
+      }
+      @media screen and (min-width: 600px) and (max-width: 768px) {
+        width: 100%;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 70%;
+      }
+      &:hover {
+        color: $telegram-blue-hover;
+        background: $telegram-text-color;
+        border-color: $telegram-blue-hover;
+      }
+    }
+  }
+}
